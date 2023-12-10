@@ -32,7 +32,7 @@ class _ViewTaskPageState extends State<ViewTaskPage> {
                       height: 10,
                     );
                   },
-                  itemCount: cubit.getLength(), //Tasks.title.length,
+                  itemCount: cubit.getLength(),
                   itemBuilder: (context, index) {
                     return Container(
                       decoration: BoxDecoration(
