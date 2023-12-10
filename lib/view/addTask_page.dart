@@ -49,14 +49,28 @@ class _AddTaskPageState extends State<AddTaskPage> {
             ElevatedButton(
                 onPressed: () {
                   cubit.addTask(entryController.text);
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (_) => ViewTaskPage()));
+                  if (entryController.text.isNotEmpty) {
+                    entryController.clear();
+                  }
                 },
                 child: Text(
                   'Save Task',
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, fontSize: 18),
-                ))
+                )),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (_) => ViewTaskPage()));
+                },
+                child: Text(
+                  'View Tasks',
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 18),
+                )),
           ],
         );
       }),

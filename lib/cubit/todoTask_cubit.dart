@@ -17,6 +17,6 @@ class ToDoTaskCubit extends Cubit<ToDoTaskState> {
   }
 
   String getTaskTitle(int index) {
-    return tasks[index];
+    return title = tasks[index];
   }
 }
