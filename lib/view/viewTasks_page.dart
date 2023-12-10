@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todolist_using_bloc/dataModel/tasks.dart';
+import 'package:todolist_using_bloc/data/tasks.dart';
 import 'package:todolist_using_bloc/view/addTask_page.dart';
 
 class ViewTaskPage extends StatefulWidget {
