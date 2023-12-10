@@ -15,21 +15,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => ToDoTaskCubit(),
+        )
+      ],
       child: MaterialApp(
         title: 'ToDoList Application',
         debugShowCheckedModeBanner: false,
         home: AddTaskPage(),
       ),
-      providers: [
-        BlocProvider(
-          create: (_) => ToDoTaskCubit(),
-          child: AddTaskPage(),
-        ),
-        /*BlocProvider(
-          create: (context) => ToDoTaskCubit(),
-          child: ViewTaskPage(),
-        ),*/
-      ],
     );
   }
 }

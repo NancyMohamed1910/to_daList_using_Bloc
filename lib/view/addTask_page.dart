@@ -16,7 +16,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocConsumer(
+      body: BlocConsumer<ToDoTaskCubit, ToDoTaskState>(
           listener: (_, state) {},
           builder: (_, stat) {
             var cubit = ToDoTaskCubit.get(context);
@@ -53,7 +53,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                       if (entryController.text.isNotEmpty) {
                         entryController.clear();
                       }
-                      cubit.title = entryController.text;
+                      cubit.addTask(entryController.text);
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (_) => ViewTaskPage()));
                     },

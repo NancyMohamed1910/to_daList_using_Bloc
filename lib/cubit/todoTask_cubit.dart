@@ -4,6 +4,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ToDoTaskCubit extends Cubit<ToDoTaskState> {
   ToDoTaskCubit() : super(ToDoTaskInitState());
   static ToDoTaskCubit get(context) => BlocProvider.of<ToDoTaskCubit>(context);
-  //List<String> title = [];
-  String title = '';
+  static List<String> tasks = [];
+  static String title = '';
+  void addTask(String title) {
+    tasks.add(title);
+    print('$tasks');
+    emit(addTaskStateSuccess());
+  }
+
+  int getLength() {
+    return tasks.length;
+  }
+
+  String getTaskTitle(int index) {
+    return tasks[index];
+  }
 }
